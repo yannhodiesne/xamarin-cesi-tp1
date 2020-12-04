@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AndroidTP1.ViewModels;assembly=AndroidTP1"
+             x:Class="AndroidTP1.Views.LoginPage"
+             Title="Connexion">
+
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="16" VerticalOptions="CenterAndExpand">
+        <Label Text="Connexion" FontSize="36" TextColor="#2196F3" HorizontalOptions="Center" />
+        <BoxView Margin="8" />
+        <Entry Placeholder="Identifiant" Text="{Binding Login}" />
+        <Entry Placeholder="Mot de passe" Text="{Binding Password}" IsPassword="True" />
+        <BoxView Margin="8" />
+        <Button Text="Connexion" Command="{Binding LoginCommand}" />
+        <Button Text="Inscription" Command="{Binding RegisterCommand}"  BackgroundColor="Transparent" TextColor="Blue" TextTransform="None" FontSize="Body" />
+    </StackLayout>
+
+</ContentPage>

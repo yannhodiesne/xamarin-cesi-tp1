@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AndroidTP1.ViewModels;assembly=AndroidTP1"
+             x:Class="AndroidTP1.Views.ProfilePage"
+             Title="Profil">
+
+    <ContentPage.BindingContext>
+        <viewModels:ProfileViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="16" VerticalOptions="CenterAndExpand">
+        <Label Text="Bonjour" FontSize="36" TextColor="#2196F3" HorizontalOptions="Center" />
+        <Label Text="{Binding Username}" FontSize="36" HorizontalOptions="Center" />
+        <BoxView Margin="8" />
+        <Image Source="{Binding ProfilePicture}" HeightRequest="200" />
+        <BoxView Margin="8" />
+        <Button Text="Aller à la liste des utilisateurs" Command="{Binding AccountsCommand}"  BackgroundColor="Transparent" TextColor="Blue" TextTransform="None" FontSize="Body" />
+        <Button Text="Déconnexion" Command="{Binding LogoutCommand}" />
+    </StackLayout>
+
+</ContentPage>
